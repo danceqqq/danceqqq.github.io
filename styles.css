@@ -1,8 +1,8 @@
 body {
   padding: 0;
   margin: 0;
-  background-image: url('https://i.imgur.com/dovxpNP.gif');
-  background-size: 50% 30%;
+  background-image: url('https://i.imgur.com/dovNP.gif');
+  background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   display: flex;
@@ -17,12 +17,17 @@ h1 {
   color: #fff;
   font-size: 50px;
   font-weight: bold;
-  font-family: monospace;
+  font-family: 'NFS Font';
   letter-spacing: 7px;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   border-radius: 20px;
+  width: 80%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1 span {
