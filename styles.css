@@ -1,45 +1,47 @@
-body{
+body {
   padding: 0;
   margin: 0;
-  background-color: #000;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?programming');
+  background-image: url('https://cdn.pfps.gg/banners/2544-car.gif')";
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  height: 100%;
-  margin: 0;
-  background-color: #f4f4f4;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh
+  min-height: 100vh;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
-h1{
-  color: #484848;
+
+h1 {
+  color: #fff;
   font-size: 50px;
   font-weight: bold;
   font-family: monospace;
   letter-spacing: 7px;
-  cursor: pointer
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 20px;
 }
-h1 span{
-  transition:.5s linear
+
+h1 span {
+  transition: 0.5s linear;
 }
-h1:hover span:nth-child(1){
-  margin-right: 5px
+
+h1:hover span:nth-child(1) {
+  margin-right: 5px;
 }
-h1:hover span:nth-child(1):after{
+
+h1:hover span:nth-child(1):after {
   content: "'";
 }
-h1:hover span:nth-child(2){
-  margin-left: 30px
+
+h1:hover span:nth-child(2) {
+  margin-left: 30px;
 }
-h1:hover span{
+
+h1:hover span {
   color: #fff;
-  text-shadow: 0 0 10px #fff,
-               0 0 20px #fff, 
-               0 0 40px #fff, 
-               0 0 60px #fff
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 40px #fff;
 }
