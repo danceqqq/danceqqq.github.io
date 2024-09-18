@@ -7,7 +7,7 @@ body {
 .background-image {
   width: 600px;
   height: 800px;
-  background-image: url('https://i.imgur.com/dovNP.gif');
+  background-image: url('2544-car-pfpsgg.gif');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -41,15 +41,11 @@ h1 span {
 }
 
 h1:hover span:nth-child(1) {
-  margin-right: 5px;
-}
-
-h1:hover span:nth-child(1):after {
-  content: "'";
+  margin-right: 10px;
 }
 
 h1:hover span:nth-child(2) {
-  margin-left: 30px;
+  margin-left: 10px;
 }
 
 h1:hover span {
