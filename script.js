@@ -1,27 +1,37 @@
-// Получаем данные с сайта
-fetch('https://mlcounter.com/')
-   .then(response => response.json())
-   .then(data => {
-        // Создаем список персонажей
-        const characterList = document.querySelector('.character-list');
-        data.forEach(character => {
-            const characterElement = document.createElement('div');
-            characterElement.classList.add('character');
-            characterElement.style.backgroundImage = `url(${character.image})`;
-            characterElement.addEventListener('click', () => {
-                // Получаем данные о персонаже
-                fetch(`https://mlcounter.com/${character.name}`)
-                   .then(response => response.json())
-                   .then(characterData => {
-                        // Выводим данные о персонаже
-                        const dataContainer = document.querySelector('.data-container');
-                        dataContainer.innerHTML = `
-                            <h2>${character.name}</h2>
-                            <p>Описание: ${characterData.description}</p>
-                            <p>Данные: ${characterData.data}</p>
-                        `;
-                    });
-            });
-            characterList.appendChild(characterElement);
-        });
+const axios = require('axios');
+const cheerio = require('cheerio');
+
+// Список героев
+const heroes = [
+  'fredrinn',
+  'x.borg',
+  'karrie',
+  'valir',
+  'dyrroth',
+  'thamuz',
+  // Добавьте остальных героев в этот список
+];
+
+// Функция для парсинга HTML-страницы
+function parseHeroPage(hero) {
+  const url = `https://mlcounter.com/heroes/${hero}/`;
+  axios.get(url)
+   .then(response => {
+      const $ = cheerio.load(response.data);
+      const heroName = $('h1').text();
+      const weakAgainst = [];
+      $('.hero-counter-list.hero-counter').each((index, element) => {
+        weakAgainst.push($(element).find('.hero-name').text());
+      });
+      console.log(`${heroName} is Weak Against:`);
+      console.log(weakAgainst.join(', '));
+    })
+   .catch(error => {
+      console.error(error);
     });
+}
+
+// Парсинг страниц героев
+heroes.forEach(hero => {
+  parseHeroPage(hero);
+});
