@@ -26,29 +26,17 @@ body {
     justify-content: center;
 }
 
-.hero-select img {
+.hero-select select {
+    margin: 10px;
+}
+
+#counter-pick-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#counter-pick-container img {
     width: 50px;
     height: 50px;
     margin: 10px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.hero-select img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.counter-pick {
-    width: 40%;
-    text-align: center;
-}
-
-.counter-pick img {
-    width: 100px;
-    height: 100px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
 }
