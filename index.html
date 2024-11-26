@@ -3,19 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DanceQQQ</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Mobile Legend`s Герой Выбор</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="background" style="background-image: url('1.jpeg');"></div>
     <div class="container">
-        <div class="character-selector">
-            <h2>Выберите персонажа:</h2>
-            <div class="character-list"></div>
+        <div class="team-left">
+            <h2>Моя команда</h2>
+            <select id="my-team-select">
+                <!-- Герои будут добавлены из файла cfg -->
+            </select>
         </div>
-        <div class="data-container"></div>
+        <div class="counter-pick">
+            <h2>Контр-пик</h2>
+            <p id="counter-pick-name"></p>
+        </div>
+        <div class="team-right">
+            <h2>Команда врага</h2>
+            <select id="enemy-team-select">
+                <!-- Герои будут добавлены из файла cfg -->
+            </select>
+        </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
