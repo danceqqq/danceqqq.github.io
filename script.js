@@ -21,6 +21,9 @@ Object.keys(heroes).forEach(hero => {
     enemyTeamSelect.appendChild(option);
 });
 
+// Установка фокуса на селект "Моя команда"
+myTeamSelect.focus();
+
 // Обработка выбора героя
 myTeamSelect.addEventListener('change', () => {
     const selectedHero = myTeamSelect.value;
