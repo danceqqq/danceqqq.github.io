@@ -28,7 +28,9 @@ heroSelects.forEach((select) => {
     Object.keys(heroes).forEach((hero) => {
         const option = document.createElement('option');
         option.value = hero;
-        option.text = hero;
+        const img = document.createElement('img');
+        img.src = heroes[hero].img;
+        option.appendChild(img);
         select.appendChild(option);
     });
 });
@@ -36,10 +38,17 @@ heroSelects.forEach((select) => {
 heroSelects.forEach((select) => {
     select.addEventListener('change', () => {
         const selectedHero = select.value;
-        const counterPick = heroes[selectedHero].counterPick;
-        const counterPickImg = document.createElement('img');
-        counterPickImg.src = heroes[counterPick].img;
-        counterPickContainer.appendChild(counterPickImg);
-        counterPickImgs.push(counterPickImg);
+        if (selectedHero === '') {
+            counterPickImgs.forEach((img) => {
+                img.remove();
+            });
+            counterPickImgs.length = 0;
+        } else {
+            const counterPick = heroes[selectedHero].counterPick;
+            const counterPickImg = document.createElement('img');
+            counterPickImg.src = heroes[counterPick].img;
+            counterPickContainer.appendChild(counterPickImg);
+            counterPickImgs.push(counterPickImg);
+        }
     });
 });
