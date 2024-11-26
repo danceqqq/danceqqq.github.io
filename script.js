@@ -21,7 +21,8 @@ const heroes = {
 
 // Обработка выбора героя
 const heroSelects = document.querySelectorAll('.hero-select select');
-const counterPickImg = document.getElementById('counter-pick-img');
+const counterPickContainer = document.getElementById('counter-pick-container');
+const counterPickImgs = [];
 
 heroSelects.forEach((select) => {
     Object.keys(heroes).forEach((hero) => {
@@ -36,6 +37,9 @@ heroSelects.forEach((select) => {
     select.addEventListener('change', () => {
         const selectedHero = select.value;
         const counterPick = heroes[selectedHero].counterPick;
+        const counterPickImg = document.createElement('img');
         counterPickImg.src = heroes[counterPick].img;
+        counterPickContainer.appendChild(counterPickImg);
+        counterPickImgs.push(counterPickImg);
     });
 });
