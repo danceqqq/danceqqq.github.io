@@ -6,7 +6,7 @@ const heroes = {
     },
     "Баксий": {
         "counterPick": "Эстес",
-        "img": "baxi.png"
+        "img": "baksij.png"
     },
     "Джонсон": {
         "counterPick": "Минотавр",
@@ -20,13 +20,21 @@ const heroes = {
 };
 
 // Обработка выбора героя
-const heroImgs = document.querySelectorAll('.hero-select img');
+const heroSelects = document.querySelectorAll('.hero-select select');
 const counterPickImg = document.getElementById('counter-pick-img');
 
-heroImgs.forEach((img, index) => {
-    img.src = heroes[Object.keys(heroes)[index]].img;
-    img.addEventListener('click', () => {
-        const selectedHero = Object.keys(heroes)[index];
+heroSelects.forEach((select) => {
+    Object.keys(heroes).forEach((hero) => {
+        const option = document.createElement('option');
+        option.value = hero;
+        option.text = hero;
+        select.appendChild(option);
+    });
+});
+
+heroSelects.forEach((select) => {
+    select.addEventListener('change', () => {
+        const selectedHero = select.value;
         const counterPick = heroes[selectedHero].counterPick;
         counterPickImg.src = heroes[counterPick].img;
     });
