@@ -1,10 +1,22 @@
 // Список героев и контр-пиков
 const heroes = {
-    "Эстес": "Баксий",
-    "Баксий": "Эстес",
-    "Джонсон": "Минотавр",
-    "Минотавр": "Джонсон",
-    // Добавьте больше героев и контр-пиков в формате "Герой": "Контрпик"
+    "Эстес": {
+        "counterPick": "Баксий",
+        "img": "estes.png"
+    },
+    "Баксий": {
+        "counterPick": "Эстес",
+        "img": "baxi.png"
+    },
+    "Джонсон": {
+        "counterPick": "Минотавр",
+        "img": "johnson.jpg"
+    },
+    "Минотавр": {
+        "counterPick": "Джонсон",
+        "img": "minotavr.png"
+    },
+    // Добавьте больше героев и контр-пиков в формате "Герой": { "Контрпик": "Имя", "img": "Имя файла" }
 };
 
 // Обработка выбора героя
@@ -21,20 +33,20 @@ Object.keys(heroes).forEach(hero => {
     enemyTeamSelect.appendChild(option);
 });
 
-// Установка фокуса на селект "Моя команда"
-myTeamSelect.focus();
+// Установка значений для селекта "Моя команда"
+myTeamSelect.value = Object.keys(heroes)[0];
 
 // Обработка выбора героя
 myTeamSelect.addEventListener('change', () => {
     const selectedHero = myTeamSelect.value;
-    const counterPick = heroes[selectedHero];
+    const counterPick = heroes[selectedHero].counterPick;
     counterPickName.textContent = counterPick;
     counterPickName.classList.remove('selected');
 });
 
 enemyTeamSelect.addEventListener('change', () => {
     const selectedHero = enemyTeamSelect.value;
-    const counterPick = heroes[selectedHero];
+    const counterPick = heroes[selectedHero].counterPick;
     counterPickName.textContent = counterPick;
     if (myTeamSelect.value === counterPick) {
         counterPickName.classList.add('selected');
