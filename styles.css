@@ -6,6 +6,9 @@ body {
 }
 
 .profile-card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     width: 800px;
     margin: 40px auto;
     background-color: #fff;
@@ -19,7 +22,7 @@ body {
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
-    margin: 0 auto;
+    margin-right: 20px;
 }
 
 .avatar img {
@@ -28,8 +31,16 @@ body {
     object-fit: cover;
 }
 
+.sections {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .section {
-    margin-bottom: 40px;
+    margin-right: 20px;
+    width: 45%;
 }
 
 .section h2 {
@@ -39,16 +50,15 @@ body {
 
 .tiles {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
 .tile {
-    width: 45%;
-    margin: 20px;
     background-color: #fff;
     padding: 20px;
+    border: 1px solid #ddd;
     border-radius: 10px;
+    margin-bottom: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
